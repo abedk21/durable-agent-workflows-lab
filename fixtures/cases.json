@@ -1,0 +1,23 @@
+{
+  "urgent": {
+    "id": "SYN-URG-101", "tenant": "sample-team", "severity": "P1",
+    "summary": "Synthetic agent tool calls hit rate limits during a load test",
+    "signals": [
+      {"id": "LOG-101", "kind": "log", "detail": "Tool call returned HTTP 429 RESOURCE_EXHAUSTED"},
+      {"id": "MET-102", "kind": "metric", "detail": "quota_utilization=0.99 over 5 minutes"}
+    ]
+  },
+  "routine": {
+    "id": "SYN-RUN-202", "tenant": "sample-team", "severity": "P3",
+    "summary": "Synthetic OAuth connector scope mismatch in test environment",
+    "signals": [
+      {"id": "LOG-201", "kind": "log", "detail": "HTTP 403 permission denied"},
+      {"id": "CFG-202", "kind": "config", "detail": "required_scope=docs.read; granted_scopes=profile.read"}
+    ]
+  },
+  "unknown": {
+    "id": "SYN-UNK-303", "tenant": "sample-team", "severity": "P2",
+    "summary": "Synthetic intermittent delays without independent supporting evidence",
+    "signals": [{"id": "LOG-301", "kind": "log", "detail": "One request exceeded the local latency threshold"}]
+  }
+}
